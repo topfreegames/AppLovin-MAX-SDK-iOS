@@ -17,6 +17,10 @@ then
     sudo gem install cocoapods
 fi
 
+# Navigate to the directory containing the Podfile
+# Xcode Cloud runs this script from ci_scripts/, so we need to go up one level
+cd "$CI_PRIMARY_REPOSITORY_PATH/AppLovin MAX Demo App - Swift"
+
 # Install pods
 pod install
 
