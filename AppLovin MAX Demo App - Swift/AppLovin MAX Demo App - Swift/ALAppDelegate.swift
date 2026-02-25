@@ -23,11 +23,11 @@ class ALAppDelegate: UIResponder, UIApplicationDelegate
 
             builder.mediationProvider = ALMediationProviderMAX
              
-            // Enable test mode by default for the current device.
-            if let currentIDFV = UIDevice.current.identifierForVendor?.uuidString
-            {
-                builder.testDeviceAdvertisingIdentifiers = [currentIDFV]
-            }
+//            // Enable test mode by default for the current device.
+//            if let currentIDFV = UIDevice.current.identifierForVendor?.uuidString
+//            {
+//                builder.testDeviceAdvertisingIdentifiers = [currentIDFV]
+//            }
         }
 
         // Initialize the SDK with the configuration
