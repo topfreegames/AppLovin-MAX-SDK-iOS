@@ -6,7 +6,6 @@
 //  Copyright © 2023 AppLovin. All rights reserved.
 //
 
-import AdjustSdk
 import AppLovinSDK
 import SwiftUI
 
@@ -18,7 +17,7 @@ struct ALMAXSwiftUIBannerAdView: View
     var body: some View
     {
         VStack {
-            MAAdViewSwiftUIWrapper(adUnitIdentifier: "YOUR_AD_UNIT_ID",
+            MAAdViewSwiftUIWrapper(adUnitIdentifier: "21dde131acbb89d9",
                                    adFormat: .banner,
                                    sdk: ALSdk.shared(),
                                    didLoad: viewModel.didLoad,
@@ -86,15 +85,7 @@ extension ALMAXSwiftUIBannerAdViewModel: MAAdViewAdDelegate, MAAdRevenueDelegate
     {
         logCallback()
         
-        let adjustAdRevenue = ADJAdRevenue(source: "applovin_max_sdk")!
-        adjustAdRevenue.setRevenue(ad.revenue, currency: "USD")
-        adjustAdRevenue.setAdRevenueNetwork(ad.networkName)
-        adjustAdRevenue.setAdRevenueUnit(ad.adUnitIdentifier)
-        if let placement = ad.placement
-        {
-            adjustAdRevenue.setAdRevenuePlacement(placement)
-        }
-        
-        Adjust.trackAdRevenue(adjustAdRevenue)
+        // Revenue tracking - integrate with your analytics service here if needed
+        // Example: Revenue is available via ad.revenue
     }
 }

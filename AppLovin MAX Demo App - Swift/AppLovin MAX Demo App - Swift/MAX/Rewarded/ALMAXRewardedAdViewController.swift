@@ -6,13 +6,12 @@
 //  Copyright © 2019 AppLovin. All rights reserved.
 //
 
-import AdjustSdk
 import AppLovinSDK
 import UIKit
 
 class ALMAXRewardedAdViewController: ALBaseAdViewController, MARewardedAdDelegate, MAAdRevenueDelegate
 {
-    private let rewardedAd = MARewardedAd.shared(withAdUnitIdentifier: "YOUR_AD_UNIT_ID")
+    private let rewardedAd = MARewardedAd.shared(withAdUnitIdentifier: "106aa87f04fed715")
     private var retryAttempt = 0.0
     
     // MARK: View Lifecycle
@@ -94,15 +93,7 @@ class ALMAXRewardedAdViewController: ALBaseAdViewController, MARewardedAdDelegat
     {
         logCallback()
         
-        let adjustAdRevenue = ADJAdRevenue(source: "applovin_max_sdk")!
-        adjustAdRevenue.setRevenue(ad.revenue, currency: "USD")
-        adjustAdRevenue.setAdRevenueNetwork(ad.networkName)
-        adjustAdRevenue.setAdRevenueUnit(ad.adUnitIdentifier)
-        if let placement = ad.placement
-        {
-            adjustAdRevenue.setAdRevenuePlacement(placement)
-        }
-            
-        Adjust.trackAdRevenue(adjustAdRevenue)
+        // Revenue tracking - integrate with your analytics service here if needed
+        // Example: Revenue is available via ad.revenue
     }
 }
